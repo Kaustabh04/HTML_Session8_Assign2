@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Home</title>
+	<link rel="stylesheet" href="selfieTech.css"></style>
+	  
+  </head>
+  
+  <body>
+    <div id="wrapper">
+	<h2>My Selfie Tech</h2>
+	
+	<div class="divPad">
+	  <div>Welcome <strong>Kaustabh</strong></div><br/><br/>
+	  <input type="button" value="Logout" onclick="logout()">
+	</div>
+
+    </div>
+	
+   <script src="app.js"></script>
+   <script src="jquery-min.js"></script>
+    
+
+  <script>
+    // Disable browser back button 
+    $(document).ready(function() {
+        function disableBack() { window.history.forward() }
+
+        window.onload = disableBack();
+        window.onpageshow = function(evt) { 
+		  if (evt.persisted) disableBack() 
+		}
+    });
+  </script>
+  </body>
+  
+</html>

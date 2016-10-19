@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Login</title>
+	<link rel="stylesheet" href="selfieTech.css"></style>
+	  
+  </head>
+  
+  <body>
+  
+  <div id="wrapper">
+    
+	<h2>My Selfie Tech</h2>
+	
+	<div class="divPad">
+	
+	<!-- Sign up start -->
+	<div style="display:none;" id="signUp">
+	  
+	  <h3>Sign Up</h3>
+	  <input type ="text" placeholder="Name"><br/>
+	  <input type ="email" placeholder="Email"><br/>
+	  <input type ="password" placeholder="Password"><br/><br/>
+	  
+	   <input type="button" value="Submit Query">&nbsp;
+	   <input type="button" value="Back" onclick="backsignup()">
+	  
+	</div>
+	<!-- Sign up end -->
+	
+	<!-- login start -->
+	<form name="myForm" action="home.html" onsubmit="return validateForm();" method="post">
+	
+	<div style="display:none;" id="logIn">
+	  <h3>Login</h3>
+	  <div id="emailError" class="error"></div>
+	  <div id="passError" class="error"></div>
+	  <input type ="email" name="email1" id="email" placeholder="Email"><br/>
+	  <input type ="password" name="password" id="password" placeholder="Password"><br/><br/>
+	  
+	   <input type="submit" value="Submit Query">&nbsp;
+	   <input type="button" value="Back" onclick="backlogin()">
+	</div>
+	
+	</form>
+	<!-- login end -->	
+	  
+	  <br/><br/>
+	  
+	  <input type="button" value="Login" id="ligInClick">&nbsp;
+	  <input type="button" value="Sign Up" id="signUpClick">
+	</div>
+  </div>
+  
+  <script src="app.js"></script>
+  <script src="jquery-min.js"></script>
+  
+  <script>
+    // Disable browser back button 
+    $(document).ready(function() {
+        function disableBack() { window.history.forward() }
+
+        window.onload = disableBack();
+        window.onpageshow = function(evt) { 
+		  if (evt.persisted) disableBack() 
+		}
+    });
+  </script>  
+  
+  </body>
+  
+</html>
